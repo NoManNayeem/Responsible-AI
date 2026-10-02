@@ -1,0 +1,1352 @@
+{
+  "chapters": [
+    "Open",
+    "Basics",
+    "Why now",
+    "Risk map",
+    "Rules",
+    "Lifecycle",
+    "Engineers",
+    "Agents",
+    "Leaders",
+    "Organizations",
+    "Everyone",
+    "Plan",
+    "Close"
+  ],
+  "scenes": [
+    {
+      "id": "open-hook",
+      "chapter": 0,
+      "type": "statement",
+      "headline": "In 2025, AI failed in public 362 times.",
+      "sub": "And those are only the cases someone wrote down.",
+      "source": "AI Incident Database via Stanford HAI, 2026 AI Index Report",
+      "narration": "In 2025, the AI Incident Database logged three hundred and sixty-two documented cases of AI causing real harm, or coming close. That's up from two hundred and thirty-three the year before. And those are only the ones someone wrote down."
+    },
+    {
+      "id": "open-growth",
+      "chapter": 0,
+      "type": "compare",
+      "title": "Documented AI incidents",
+      "a": {
+        "label": "2024",
+        "value": 233
+      },
+      "b": {
+        "label": "2025",
+        "value": 362
+      },
+      "source": "Stanford HAI, 2026 AI Index Report",
+      "narration": "That is a fifty-five percent jump in a single year. Stanford's 2026 AI Index put it plainly: responsible AI is not keeping pace with AI capability. Models are improving faster than our ability to check them, govern them, and fix them when they break."
+    },
+    {
+      "id": "open-cases",
+      "chapter": 0,
+      "type": "cards",
+      "title": "Three real failures",
+      "columns": 3,
+      "items": [
+        {
+          "title": "Airline chatbot, 2024",
+          "body": "Invented a bereavement refund policy. A tribunal ruled the airline owns what its bot says.",
+          "tone": "risk"
+        },
+        {
+          "title": "Consulting report, 2025",
+          "body": "Government report cited sources that don't exist. Part of an A$440K fee refunded.",
+          "tone": "risk"
+        },
+        {
+          "title": "Coding agent, 2025",
+          "body": "Deleted a startup's production database during an explicit code freeze.",
+          "tone": "risk"
+        }
+      ],
+      "source": "CIO.com; Evidently AI; CFO Dive coverage",
+      "narration": "Three stories show the pattern. An airline chatbot invented a refund policy, and a tribunal ruled the airline had to pay. A consulting firm refunded part of a government contract after its report cited sources that didn't exist. And an AI coding agent deleted a company's production database during a code freeze."
+    },
+    {
+      "id": "open-pattern",
+      "chapter": 0,
+      "type": "statement",
+      "headline": "No villain. No rogue superintelligence. Just missing guardrails.",
+      "narration": "Notice what these have in common. No villain. No rogue superintelligence. Just ordinary systems, deployed without the checks that would have caught the mistake. That gap, between what AI can do and how carefully we deploy it, is what responsible AI is about. Let's go end to end."
+    },
+    {
+      "id": "ch1",
+      "chapter": 1,
+      "type": "chapter",
+      "num": 1,
+      "title": "What responsible AI actually means",
+      "sub": "A plain-language definition you can act on",
+      "narration": "Part one. What responsible AI actually means."
+    },
+    {
+      "id": "basics-def",
+      "chapter": 1,
+      "type": "statement",
+      "headline": "Safe. Fair. Does what it promises. And you can prove it.",
+      "sub": "Responsible AI is the practices and governance that make AI trustworthy.",
+      "source": "Stanford HAI, 2026 AI Index Report",
+      "narration": "Stanford defines responsible AI as the practices and governance mechanisms that make sure AI systems are safe, fair, beneficial, and perform as intended. In plain words: it works, it doesn't hurt people, someone is accountable, and you can prove all three."
+    },
+    {
+      "id": "basics-traits",
+      "chapter": 1,
+      "type": "cards",
+      "title": "Seven traits of trustworthy AI",
+      "columns": 4,
+      "compact": true,
+      "items": [
+        {
+          "title": "Valid and reliable",
+          "body": "Does the job correctly, every time. The foundation for the rest.",
+          "tone": "safe"
+        },
+        {
+          "title": "Safe",
+          "body": "Doesn't endanger people, property, or the environment."
+        },
+        {
+          "title": "Secure and resilient",
+          "body": "Withstands attacks and recovers from failure."
+        },
+        {
+          "title": "Accountable and transparent",
+          "body": "Someone owns it. People know AI is involved."
+        },
+        {
+          "title": "Explainable",
+          "body": "People can understand why it produced a result."
+        },
+        {
+          "title": "Privacy-enhanced",
+          "body": "Protects personal data by design."
+        },
+        {
+          "title": "Fair, bias managed",
+          "body": "Doesn't systematically disadvantage groups."
+        }
+      ],
+      "source": "NIST AI Risk Management Framework 1.0",
+      "narration": "The US standards body NIST breaks trustworthy AI into seven traits. Valid and reliable, which is the foundation. Safe. Secure and resilient. Accountable and transparent. Explainable and interpretable. Privacy-enhanced. And fair, with harmful bias managed. Weakness in any one of them undermines trust in the whole system."
+    },
+    {
+      "id": "basics-myths",
+      "chapter": 1,
+      "type": "split",
+      "left": {
+        "title": "It isn't",
+        "tone": "risk",
+        "items": [
+          "A one-time ethics review",
+          "A policy PDF nobody reads",
+          "Only the legal team's job",
+          "A brake on innovation"
+        ]
+      },
+      "right": {
+        "title": "It is",
+        "tone": "safe",
+        "items": [
+          "Continuous: before, during, after launch",
+          "Scaled to how much harm is possible",
+          "Shared by builders, buyers, and users",
+          "Evidence you can show on request"
+        ]
+      },
+      "narration": "Let's clear up some myths. Responsible AI is not a one-time ethics review, a policy document nobody reads, or a job only for lawyers. It is a continuous practice, scaled to how much harm a system could cause, shared by the people who build, buy, and use AI, and backed by evidence you can show."
+    },
+    {
+      "id": "basics-proportion",
+      "chapter": 1,
+      "type": "statement",
+      "headline": "A song recommender is not a loan approver.",
+      "sub": "Spend your caution where the stakes are highest.",
+      "narration": "The key idea is proportionality. A model that recommends songs and a model that approves loans need very different levels of care. Responsible AI is not about slowing everything down. It's about spending your caution where the stakes are highest."
+    },
+    {
+      "id": "ch2",
+      "chapter": 2,
+      "type": "chapter",
+      "num": 2,
+      "title": "Why it matters now",
+      "sub": "What the 2026 data says",
+      "narration": "Part two. Why it matters now."
+    },
+    {
+      "id": "why-blockers",
+      "chapter": 2,
+      "type": "bars",
+      "title": "Top blockers to scaling AI",
+      "unit": "%",
+      "bars": [
+        {
+          "label": "Security and risk",
+          "value": 62,
+          "tone": "risk"
+        },
+        {
+          "label": "Technical limitations",
+          "value": 38
+        },
+        {
+          "label": "Regulatory uncertainty",
+          "value": 38
+        },
+        {
+          "label": "Gaps in responsible AI tooling",
+          "value": 32
+        }
+      ],
+      "source": "Stanford HAI, 2026 AI Index Report (organization survey)",
+      "narration": "Here's what organizations told Stanford is holding back their AI rollout. Sixty-two percent named security and risk as the top blocker, well ahead of technical limits or regulatory uncertainty. In other words, trust, not technology, is now the bottleneck."
+    },
+    {
+      "id": "why-policy",
+      "chapter": 2,
+      "type": "compare",
+      "title": "Businesses with no responsible AI policy",
+      "unit": "%",
+      "a": {
+        "label": "Before",
+        "value": 24
+      },
+      "b": {
+        "label": "Now",
+        "value": 11
+      },
+      "improving": true,
+      "source": "Stanford HAI, 2026 AI Index Report",
+      "narration": "The good news: organizations are writing policies. The share of businesses with no responsible AI policy at all fell from twenty-four percent to eleven percent. ISO 42001 and the NIST framework are now the most cited standards shaping those policies."
+    },
+    {
+      "id": "why-barriers",
+      "chapter": 2,
+      "type": "bars",
+      "title": "Why policies don't become practice",
+      "unit": "%",
+      "bars": [
+        {
+          "label": "Knowledge and training gaps",
+          "value": 59,
+          "tone": "warn"
+        },
+        {
+          "label": "Budget constraints",
+          "value": 48
+        },
+        {
+          "label": "Regulatory uncertainty",
+          "value": 41
+        }
+      ],
+      "source": "Stanford HAI, 2026 AI Index Report",
+      "narration": "But writing a policy is not the same as living it. The biggest barrier to putting responsible AI into practice is knowledge: fifty-nine percent of organizations cite gaps in skills and training. Budget and regulatory uncertainty follow. Closing that knowledge gap is the point of this video."
+    },
+    {
+      "id": "why-transparency",
+      "chapter": 2,
+      "type": "stats",
+      "stats": [
+        {
+          "value": 40,
+          "label": "Average AI developer transparency score, down from 58",
+          "tone": "risk"
+        },
+        {
+          "value": 22,
+          "suffix": "–94%",
+          "label": "Hallucination rates across top models, depending on the test",
+          "tone": "warn"
+        }
+      ],
+      "source": "Stanford HAI, 2026 AI Index Report",
+      "narration": "Meanwhile, transparency from AI developers went backwards. Stanford's average developer transparency score dropped from fifty-eight to forty. And measured hallucination rates across top models ranged from twenty-two to ninety-four percent, depending on the test. You cannot assume the model is right."
+    },
+    {
+      "id": "why-shadow",
+      "chapter": 2,
+      "type": "stats",
+      "stats": [
+        {
+          "value": 90,
+          "suffix": "%",
+          "label": "of executives feel confident they can see how AI is used",
+          "tone": "neutral"
+        },
+        {
+          "value": 52,
+          "suffix": "%",
+          "label": "of employees admit using unapproved AI tools",
+          "tone": "warn"
+        },
+        {
+          "value": 43,
+          "suffix": "%",
+          "label": "of security incidents involved shadow AI",
+          "tone": "risk"
+        }
+      ],
+      "source": "Okta global survey, May 2026; IBM Cost of a Data Breach 2026 (via Cybersecurity Dive)",
+      "narration": "And inside companies, AI use is outrunning oversight. In one 2026 global survey, ninety percent of executives felt confident they could see how AI was used, yet fifty-two percent of employees admitted using unapproved tools, often on personal accounts. IBM's 2026 breach research links shadow AI to forty-three percent of security incidents."
+    },
+    {
+      "id": "ch3",
+      "chapter": 3,
+      "type": "chapter",
+      "num": 3,
+      "title": "The risk map",
+      "sub": "What actually goes wrong, with real cases",
+      "narration": "Part three. The risk map."
+    },
+    {
+      "id": "risk-map",
+      "chapter": 3,
+      "type": "cards",
+      "title": "Eight ways AI goes wrong",
+      "columns": 4,
+      "compact": true,
+      "items": [
+        {
+          "title": "Hallucination",
+          "body": "Confident, fluent, wrong.",
+          "tone": "risk"
+        },
+        {
+          "title": "Bias",
+          "body": "Unequal outcomes for different groups.",
+          "tone": "risk"
+        },
+        {
+          "title": "Privacy leaks",
+          "body": "Personal or secret data exposed.",
+          "tone": "risk"
+        },
+        {
+          "title": "Security attacks",
+          "body": "Prompt injection, poisoning, model theft.",
+          "tone": "risk"
+        },
+        {
+          "title": "Misuse",
+          "body": "Fraud, deepfakes, harassment.",
+          "tone": "warn"
+        },
+        {
+          "title": "Over-reliance",
+          "body": "People stop checking the output.",
+          "tone": "warn"
+        },
+        {
+          "title": "IP and provenance",
+          "body": "Copyright, licensing, unclear origins.",
+          "tone": "warn"
+        },
+        {
+          "title": "Runaway agents",
+          "body": "Wrong answers become wrong actions.",
+          "tone": "warn"
+        }
+      ],
+      "narration": "Here's the map of what can go wrong. Hallucination: confident, fluent, wrong. Bias: unequal outcomes for different groups. Privacy leaks. Security attacks like prompt injection. Deliberate misuse, such as deepfakes and fraud. Over-reliance, when people stop checking. Intellectual property problems. And agents, which turn wrong answers into wrong actions."
+    },
+    {
+      "id": "risk-escalation",
+      "chapter": 3,
+      "type": "steps",
+      "title": "Why agents raise the stakes",
+      "items": [
+        {
+          "title": "Wrong answer",
+          "body": "A chatbot says something false"
+        },
+        {
+          "title": "Wrong decision",
+          "body": "A person acts on it"
+        },
+        {
+          "title": "Wrong action",
+          "body": "An agent acts on it, by itself"
+        }
+      ],
+      "escalate": true,
+      "narration": "That last point is the big shift of 2025 and 2026. A chatbot that hallucinates gives you a wrong answer. A person may act on it. An agent that hallucinates, with access to your email, database, or payments, takes the wrong action itself. The cost of a mistake grows with every permission you grant."
+    },
+    {
+      "id": "case-airline",
+      "chapter": 3,
+      "type": "case",
+      "org": "Airline customer chatbot",
+      "year": "2024",
+      "what": "A grieving passenger asked about bereavement fares. The chatbot invented a policy promising a refund after travel.",
+      "outcome": "The airline argued the bot was responsible for its own words. The tribunal rejected that and ordered compensation.",
+      "lesson": "You own every word your AI says to a customer.",
+      "source": "Civil Resolution Tribunal ruling, Feb 2024; CIO.com",
+      "narration": "Case one. A grieving passenger asked Air Canada's chatbot about bereavement fares. It invented a policy promising a refund after travel. When he claimed it, the airline argued the chatbot was responsible for its own words. The tribunal rejected that. Lesson: you own every word your AI says to a customer."
+    },
+    {
+      "id": "case-report",
+      "chapter": 3,
+      "type": "case",
+      "org": "Government consulting report",
+      "year": "2025",
+      "what": "A 237-page report for Australia's employment department cited papers and books that don't exist, and misquoted a judge.",
+      "outcome": "The firm disclosed generative AI was used, published a corrected version, and refunded the final contract payment.",
+      "lesson": "Human review means checking facts at the source, not polishing prose.",
+      "source": "CFO Dive; Moneylife; Elephas coverage, Oct 2025",
+      "narration": "Case two. A 237-page report from Deloitte for the Australian government cited papers and books that don't exist, and misquoted a judge. The firm acknowledged generative AI had been used, corrected the report, and refunded the final payment. Lesson: human review means checking the facts, not polishing the prose."
+    },
+    {
+      "id": "case-agent",
+      "chapter": 3,
+      "type": "case",
+      "org": "AI coding agent",
+      "year": "2025",
+      "what": "During an explicit code freeze, an AI coding agent ran commands that wiped a startup's production database.",
+      "outcome": "The vendor apologized, refunded the customer, and committed to a postmortem and stronger safeguards.",
+      "lesson": "A prompt instruction is not a permission system. Enforce limits in infrastructure.",
+      "source": "CIO.com; Cybernews, July 2025",
+      "narration": "Case three. During an explicit code freeze, Replit's AI coding agent ran commands that wiped a startup's production database. The vendor apologized, refunded the customer, and committed to stronger safeguards. Lesson: an instruction in a prompt is not a permission system. Enforce limits in the infrastructure."
+    },
+    {
+      "id": "case-legal",
+      "chapter": 3,
+      "type": "case",
+      "org": "Court filings",
+      "year": "Ongoing",
+      "what": "Lawyers keep filing briefs with fake AI-generated case citations. A US appeals court called out over two dozen in one matter.",
+      "outcome": "General-purpose models hallucinated on 58–82% of legal queries in Stanford research.",
+      "lesson": "In high-stakes work, verify every claim at the original source.",
+      "source": "The Register on Stanford HAI, 2026 AI Index Report; Stanford RegLab research",
+      "narration": "Case four repeats every month: lawyers filing briefs with fake case citations generated by AI. A US federal appeals court called out more than two dozen fake citations and misstatements in one matter. Stanford researchers found general-purpose models hallucinated on fifty-eight to eighty-two percent of legal queries. Lesson: in high-stakes work, verify every claim at the source."
+    },
+    {
+      "id": "ch4",
+      "chapter": 4,
+      "type": "chapter",
+      "num": 4,
+      "title": "Laws, standards and frameworks",
+      "sub": "What applies, and by when",
+      "narration": "Part four. Laws, standards, and frameworks."
+    },
+    {
+      "id": "eu-pyramid",
+      "chapter": 4,
+      "type": "pyramid",
+      "title": "EU AI Act: four levels of risk",
+      "levels": [
+        {
+          "title": "Unacceptable",
+          "body": "Banned: social scoring, manipulative AI, emotion recognition at work or school, untargeted face scraping",
+          "tone": "risk"
+        },
+        {
+          "title": "High risk",
+          "body": "Strict duties: hiring, credit scoring, education, critical infrastructure, law enforcement",
+          "tone": "warn"
+        },
+        {
+          "title": "Limited risk",
+          "body": "Transparency: disclose chatbots, label synthetic content and deepfakes",
+          "tone": "info"
+        },
+        {
+          "title": "Minimal risk",
+          "body": "No new duties: spam filters, game AI, most everyday tools",
+          "tone": "safe"
+        }
+      ],
+      "source": "Regulation (EU) 2024/1689",
+      "narration": "The world's most comprehensive AI law is the EU AI Act, and it's built like a pyramid. At the top, banned uses: social scoring, manipulative systems, emotion recognition at work or school. Below that, high-risk systems like hiring, credit, and education tools, with strict duties. Then transparency duties for chatbots and synthetic content. Most AI sits at the bottom, with no new rules."
+    },
+    {
+      "id": "eu-timeline",
+      "chapter": 4,
+      "type": "timeline",
+      "title": "EU AI Act: when each part applies",
+      "events": [
+        {
+          "date": "Feb 2025",
+          "title": "Bans apply",
+          "body": "Plus an AI literacy duty for staff",
+          "status": "done"
+        },
+        {
+          "date": "Aug 2025",
+          "title": "General-purpose AI",
+          "body": "Duties for foundation model providers",
+          "status": "done"
+        },
+        {
+          "date": "Aug 2026",
+          "title": "Transparency",
+          "body": "Disclosure duties and enforcement powers",
+          "status": "done"
+        },
+        {
+          "date": "Dec 2027",
+          "title": "High-risk systems",
+          "body": "Hiring, credit, education. Delayed from Aug 2026",
+          "status": "next"
+        },
+        {
+          "date": "Aug 2028",
+          "title": "High-risk in products",
+          "body": "Medical devices, machinery, vehicles",
+          "status": "next"
+        }
+      ],
+      "source": "Gibson Dunn; Hogan Lovells on the Digital Omnibus agreement, May–June 2026. Check final adopted text.",
+      "narration": "Timing matters. Bans and an AI literacy duty started in February 2025. Rules for general-purpose models followed in August 2025. Transparency duties and enforcement powers arrived in August 2026. And in 2026, EU lawmakers agreed to delay the high-risk rules: to December 2027 for standalone systems, and August 2028 for AI built into regulated products. A delay is not a pass. Work should already be underway."
+    },
+    {
+      "id": "eu-fines",
+      "chapter": 4,
+      "type": "bigstat",
+      "prefix": "€",
+      "value": 35,
+      "suffix": "M or 7%",
+      "label": "Maximum fine for banned AI practices: the higher of €35 million or 7% of global annual turnover",
+      "tone": "risk",
+      "source": "EU AI Act, Article 99",
+      "narration": "The penalties are serious. For banned practices, fines reach thirty-five million euros or seven percent of global annual turnover, whichever is higher. And the law reaches beyond Europe: if your AI system is placed on the EU market, or its output is used in the EU, it can apply to you."
+    },
+    {
+      "id": "us-landscape",
+      "chapter": 4,
+      "type": "cards",
+      "title": "United States: a patchwork",
+      "columns": 2,
+      "items": [
+        {
+          "title": "No federal AI law",
+          "body": "Existing law still applies: anti-discrimination, consumer protection, privacy. Regulators like the FTC and EEOC enforce it."
+        },
+        {
+          "title": "Executive Order 14365, Dec 2025",
+          "body": "Pushes to preempt state AI laws and sets up a DOJ task force to challenge them. State laws stand until courts or Congress act.",
+          "tone": "warn"
+        },
+        {
+          "title": "California SB 53",
+          "body": "Transparency duties for frontier AI developers. In effect since January 2026.",
+          "tone": "info"
+        },
+        {
+          "title": "Colorado SB 26-189",
+          "body": "Replaced the 2024 Colorado AI Act with a narrower, notice-based law. Effective January 2027.",
+          "tone": "info"
+        }
+      ],
+      "source": "White & Case; Baker Botts; Ropes & Gray; Mondaq, 2025–2026",
+      "narration": "The United States has no comprehensive federal AI law, but existing laws on discrimination, consumer protection, and privacy still apply. A December 2025 executive order pushes to override state AI laws and set up a Justice Department task force to challenge them. Until courts or Congress act, state laws stand. California's frontier AI transparency law took effect in January 2026. Colorado replaced its landmark AI Act with a narrower law, effective January 2027."
+    },
+    {
+      "id": "nist-cycle",
+      "chapter": 4,
+      "type": "cycle",
+      "title": "NIST AI Risk Management Framework",
+      "center": {
+        "title": "Govern",
+        "body": "Policy, roles, accountability. Runs through everything."
+      },
+      "nodes": [
+        {
+          "title": "Map",
+          "body": "Understand the context and risks of each system"
+        },
+        {
+          "title": "Measure",
+          "body": "Test, quantify, and track those risks"
+        },
+        {
+          "title": "Manage",
+          "body": "Prioritize, act, respond to incidents"
+        }
+      ],
+      "source": "NIST AI 100-1 (AI RMF 1.0)",
+      "narration": "Laws tell you what. Frameworks tell you how. The NIST AI Risk Management Framework has four functions. Govern sets policy, roles, and accountability, and runs through everything. Map identifies the context and risks of each system. Measure tests and tracks them. Manage decides what to do, and responds when things go wrong. Then the loop repeats."
+    },
+    {
+      "id": "standards",
+      "chapter": 4,
+      "type": "cards",
+      "title": "Four more names worth knowing",
+      "columns": 2,
+      "items": [
+        {
+          "title": "NIST AI 600-1",
+          "body": "Generative AI profile: 12 risks, including confabulation, information security, and intellectual property."
+        },
+        {
+          "title": "ISO/IEC 42001",
+          "body": "A certifiable AI management system. Think ISO 27001, but for AI."
+        },
+        {
+          "title": "OWASP Top 10 for LLM apps",
+          "body": "The security checklist for applications built on language models."
+        },
+        {
+          "title": "OWASP Top 10 for agents",
+          "body": "Published December 2025. Risks unique to AI that plans and acts."
+        }
+      ],
+      "source": "NIST; ISO; OWASP GenAI Security Project",
+      "narration": "Four more names worth knowing. NIST AI 600-1, the generative AI profile, lists twelve risks, such as confabulation and information security. ISO 42001 is a certifiable management system for AI, the way ISO 27001 is for security. And OWASP publishes two security top-ten lists: one for LLM applications and, since December 2025, one for autonomous agents."
+    },
+    {
+      "id": "ch5",
+      "chapter": 5,
+      "type": "chapter",
+      "num": 5,
+      "title": "End to end: the AI lifecycle",
+      "sub": "Checks at every stage, not just at the end",
+      "narration": "Part five. End to end: the AI lifecycle."
+    },
+    {
+      "id": "lifecycle",
+      "chapter": 5,
+      "type": "steps",
+      "title": "Seven stages, seven sets of checks",
+      "items": [
+        {
+          "title": "Frame",
+          "body": "Should we?"
+        },
+        {
+          "title": "Data",
+          "body": "Allowed? Representative?"
+        },
+        {
+          "title": "Build",
+          "body": "Simplest that works"
+        },
+        {
+          "title": "Evaluate",
+          "body": "Prove it"
+        },
+        {
+          "title": "Deploy",
+          "body": "Guardrails on"
+        },
+        {
+          "title": "Monitor",
+          "body": "Watch for drift"
+        },
+        {
+          "title": "Retire",
+          "body": "Shut down safely"
+        }
+      ],
+      "narration": "Responsible AI happens across the whole lifecycle, not at the end. Frame the problem. Prepare the data. Build the system. Evaluate it. Deploy with guardrails. Monitor in production. And retire it safely. Each stage has its own checks. Let's walk through them."
+    },
+    {
+      "id": "lc-frame",
+      "chapter": 5,
+      "type": "checklist",
+      "title": "1  Frame",
+      "items": [
+        "Is AI the right tool, or would a simple rule do?",
+        "Who could be affected, and how badly?",
+        "Which risk tier is this?",
+        "Who is the named owner?",
+        "Define success, and the failures you won't accept"
+      ],
+      "narration": "Stage one: frame. Before writing code, ask: is AI the right tool, or would a simple rule do? Who could be affected, and how badly? Which risk tier is this? Who owns the outcome? And write down not only what success looks like, but which failures you will not accept."
+    },
+    {
+      "id": "lc-data",
+      "chapter": 5,
+      "type": "checklist",
+      "title": "2  Data",
+      "items": [
+        "Know where every dataset came from",
+        "Confirm licence, consent, and legal basis",
+        "Check it represents the people you'll serve",
+        "Remove personal data you don't need",
+        "Document it with a datasheet",
+        "Keep test data truly separate"
+      ],
+      "narration": "Stage two: data. Know where every dataset came from, and whether you're allowed to use it. Check consent and legal basis. Check that it represents the people the system will serve. Strip personal data you don't need. Document it with a datasheet. And keep your test data truly separate."
+    },
+    {
+      "id": "lc-build",
+      "chapter": 5,
+      "type": "checklist",
+      "title": "3  Build",
+      "items": [
+        "Choose the simplest approach that works",
+        "Threat-model the design",
+        "Give every tool the least privilege possible",
+        "Start a model or system card: purpose, limits, known risks"
+      ],
+      "narration": "Stage three: build. Choose the simplest approach that works, because simpler systems are easier to explain and audit. Threat-model the design. Give tools the least privilege possible. And start your documentation now: a model or system card describing purpose, limits, and known risks."
+    },
+    {
+      "id": "lc-eval",
+      "chapter": 5,
+      "type": "checklist",
+      "title": "4  Evaluate",
+      "items": [
+        "Test on a golden set of real, representative cases",
+        "Break results down by subgroup",
+        "Red-team it: try to make it fail",
+        "Test edge cases and messy inputs",
+        "Set go and no-go thresholds before you see results"
+      ],
+      "narration": "Stage four: evaluate. Test on a golden set of real, representative cases. Break results down by subgroup to catch bias. Red-team it: try to make it fail on purpose. Test edge cases and messy inputs. And set go and no-go thresholds before you see the results, so nobody moves the goalposts."
+    },
+    {
+      "id": "lc-deploy",
+      "chapter": 5,
+      "type": "checklist",
+      "title": "5  Deploy",
+      "items": [
+        "Roll out in stages, starting small",
+        "Tell people when they're dealing with AI",
+        "Human in the loop for high-stakes decisions",
+        "Input and output filters",
+        "Log what happens",
+        "A fallback and a kill switch someone can use"
+      ],
+      "narration": "Stage five: deploy. Roll out in stages, starting small. Tell people when they're dealing with AI. Keep a human in the loop for high-stakes decisions. Add input and output filters. Log what happens. And make sure there's a fallback and a kill switch that someone actually knows how to use."
+    },
+    {
+      "id": "lc-monitor",
+      "chapter": 5,
+      "type": "checklist",
+      "title": "6–7  Monitor and retire",
+      "items": [
+        "Track quality over time; models drift",
+        "Give users a way to report problems",
+        "Have an incident plan before you need it",
+        "Re-audit on a schedule",
+        "On retirement: delete or archive data, notify users"
+      ],
+      "narration": "Stages six and seven: monitor and retire. Models drift as the world changes, so track quality over time. Give users a way to report problems. Have an incident response plan before you need one. Re-audit on a schedule. And when a system is retired, delete or archive its data properly, and tell the people who relied on it."
+    },
+    {
+      "id": "ch6",
+      "chapter": 6,
+      "type": "chapter",
+      "num": 6,
+      "title": "For engineers and developers",
+      "sub": "Fairness, explainability, evals, security",
+      "narration": "Part six. For engineers and developers."
+    },
+    {
+      "id": "eng-fairness",
+      "chapter": 6,
+      "type": "cards",
+      "title": "Fairness metrics in one screen",
+      "columns": 2,
+      "items": [
+        {
+          "title": "Demographic parity",
+          "body": "Positive outcome rates are similar across groups."
+        },
+        {
+          "title": "Equal opportunity",
+          "body": "True positive rates are similar among people who truly qualify."
+        },
+        {
+          "title": "Equalized odds",
+          "body": "True and false positive rates are both similar across groups."
+        },
+        {
+          "title": "Four-fifths rule",
+          "body": "Any group selected at under 80% of the top group's rate is a red flag in US hiring.",
+          "tone": "warn"
+        }
+      ],
+      "source": "US Uniform Guidelines on Employee Selection Procedures; fairness literature",
+      "narration": "Engineers, let's get concrete, starting with fairness. Demographic parity compares positive outcome rates across groups. Equal opportunity compares true positive rates among people who actually qualify. Equalized odds adds false positive rates too. And the four-fifths rule, used in US hiring, flags any group selected at under eighty percent of the top group's rate."
+    },
+    {
+      "id": "eng-tradeoff",
+      "chapter": 6,
+      "type": "statement",
+      "headline": "You usually can't satisfy every fairness metric at once.",
+      "sub": "Pick the one that matches the real harm. Write down why.",
+      "narration": "Important: these metrics can mathematically conflict. When base rates differ between groups, you usually cannot satisfy all of them at once. So pick the metric that matches the real harm in your use case, document why you chose it, and get sign-off from someone who understands the domain."
+    },
+    {
+      "id": "eng-explain",
+      "chapter": 6,
+      "type": "cards",
+      "title": "Explainability toolkit",
+      "columns": 2,
+      "items": [
+        {
+          "title": "SHAP",
+          "body": "How much each feature pushed one prediction up or down."
+        },
+        {
+          "title": "LIME",
+          "body": "A simple local model that mimics one decision."
+        },
+        {
+          "title": "Counterfactuals",
+          "body": "What would need to change to get a different result."
+        },
+        {
+          "title": "Grounding and citations",
+          "body": "For LLMs: show the exact source behind each claim.",
+          "tone": "safe"
+        }
+      ],
+      "narration": "Next, explainability. For classic models, SHAP shows how much each feature pushed a prediction up or down. LIME fits a simple local model around one decision. Counterfactuals tell a person what would need to change to get a different outcome. For language models, the most practical explanation is grounding: show the exact source behind each claim."
+    },
+    {
+      "id": "eng-evals",
+      "chapter": 6,
+      "type": "steps",
+      "title": "Treat evaluation like testing",
+      "items": [
+        {
+          "title": "Golden set",
+          "body": "Real, labelled cases"
+        },
+        {
+          "title": "Automated checks",
+          "body": "Format, facts, safety"
+        },
+        {
+          "title": "LLM judge",
+          "body": "Calibrated against humans"
+        },
+        {
+          "title": "Human review",
+          "body": "Spot-check samples"
+        },
+        {
+          "title": "CI gate",
+          "body": "Regressions can't ship"
+        },
+        {
+          "title": "Production sampling",
+          "body": "Keep scoring live traffic"
+        }
+      ],
+      "narration": "Treat evaluation like software testing. Build a golden dataset. Run automated checks for format, facts, and safety. Use an LLM as a judge only after you've calibrated it against human ratings. Spot-check by hand. Wire the suite into CI, so a prompt change that breaks quality can't ship. Then keep sampling real production traffic."
+    },
+    {
+      "id": "eng-owasp",
+      "chapter": 6,
+      "type": "cards",
+      "title": "OWASP Top 10 for LLM applications (2025)",
+      "columns": 2,
+      "compact": true,
+      "numbered": true,
+      "items": [
+        {
+          "title": "Prompt injection",
+          "body": "Inputs that hijack the model's instructions",
+          "tone": "risk"
+        },
+        {
+          "title": "Sensitive information disclosure",
+          "body": "Leaking personal data, secrets, IP"
+        },
+        {
+          "title": "Supply chain",
+          "body": "Compromised models, datasets, plugins"
+        },
+        {
+          "title": "Data and model poisoning",
+          "body": "Tampered training or fine-tuning data"
+        },
+        {
+          "title": "Improper output handling",
+          "body": "Trusting output in code, SQL, HTML"
+        },
+        {
+          "title": "Excessive agency",
+          "body": "Too many permissions, too much autonomy"
+        },
+        {
+          "title": "System prompt leakage",
+          "body": "Secrets or logic exposed through the prompt"
+        },
+        {
+          "title": "Vector and embedding weaknesses",
+          "body": "RAG stores that leak or get poisoned"
+        },
+        {
+          "title": "Misinformation",
+          "body": "Confident falsehoods people rely on"
+        },
+        {
+          "title": "Unbounded consumption",
+          "body": "Runaway cost or denial of service"
+        }
+      ],
+      "source": "OWASP GenAI Security Project",
+      "narration": "Security next. The OWASP Top 10 for LLM applications is your checklist. Prompt injection. Sensitive information disclosure. Supply chain. Data and model poisoning. Improper output handling. Excessive agency. System prompt leakage. Vector and embedding weaknesses. Misinformation. And unbounded consumption, meaning runaway cost or denial of service."
+    },
+    {
+      "id": "eng-injection",
+      "chapter": 6,
+      "type": "statement",
+      "headline": "Treat everything the model reads as untrusted input.",
+      "sub": "Emails, web pages, PDFs, and tool results can all carry hidden instructions.",
+      "narration": "Number one deserves a moment. Prompt injection is when text the model reads, an email, a web page, a PDF, a tool result, contains instructions that hijack it. There's no perfect fix. So design as if injection will succeed: limit what the model can reach, and validate everything it outputs before acting on it."
+    },
+    {
+      "id": "eng-guardrails",
+      "chapter": 6,
+      "type": "split",
+      "left": {
+        "title": "Input guardrails",
+        "tone": "info",
+        "items": [
+          "Redact personal data",
+          "Detect injection attempts",
+          "Enforce topic and policy rules",
+          "Rate-limit per user"
+        ]
+      },
+      "right": {
+        "title": "Output guardrails",
+        "tone": "info",
+        "items": [
+          "Validate against a schema",
+          "Check claims against sources",
+          "Filter harmful content and leaks",
+          "Never run raw output in a shell, query, or browser"
+        ]
+      },
+      "narration": "Build guardrails on both sides. On input: redact personal data, detect injection attempts, enforce topic rules, and rate-limit. On output: validate against a schema, check that claims are grounded in sources, filter harmful content and leaked data, and never pass raw model output straight into a shell, a database query, or a browser."
+    },
+    {
+      "id": "ch7",
+      "chapter": 7,
+      "type": "chapter",
+      "num": 7,
+      "title": "Agentic AI: when models take actions",
+      "sub": "Tools, memory, autonomy, and control",
+      "narration": "Part seven. Agentic AI: when models take actions."
+    },
+    {
+      "id": "agent-owasp",
+      "chapter": 7,
+      "type": "cards",
+      "title": "OWASP Top 10 for agentic applications (2026)",
+      "columns": 2,
+      "compact": true,
+      "numbered": true,
+      "items": [
+        {
+          "title": "Agent goal hijack",
+          "body": "Injected content redirects the agent's objective",
+          "tone": "risk"
+        },
+        {
+          "title": "Tool misuse",
+          "body": "Legitimate tools used in harmful ways"
+        },
+        {
+          "title": "Identity and privilege abuse",
+          "body": "Agents inheriting or escalating access"
+        },
+        {
+          "title": "Agentic supply chain",
+          "body": "Poisoned tools, plugins, servers, models"
+        },
+        {
+          "title": "Unexpected code execution",
+          "body": "Generated code runs where it shouldn't"
+        },
+        {
+          "title": "Memory and context poisoning",
+          "body": "Corrupted memory steers future actions"
+        },
+        {
+          "title": "Insecure inter-agent messages",
+          "body": "Spoofed or tampered agent-to-agent traffic"
+        },
+        {
+          "title": "Cascading failures",
+          "body": "One error spreads across agents and systems"
+        },
+        {
+          "title": "Human trust exploitation",
+          "body": "Persuasive agents nudging bad approvals"
+        },
+        {
+          "title": "Rogue agents",
+          "body": "Acting beyond their mandate"
+        }
+      ],
+      "source": "OWASP Top 10 for Agentic Applications, Dec 2025",
+      "narration": "For agents, OWASP released a separate top ten in December 2025. Goal hijacking. Tool misuse. Identity and privilege abuse. Agentic supply chain flaws. Unexpected code execution. Memory and context poisoning. Insecure agent-to-agent communication. Cascading failures. Exploiting human trust in the agent. And rogue agents acting outside their mandate."
+    },
+    {
+      "id": "agent-kit",
+      "chapter": 7,
+      "type": "checklist",
+      "title": "The agent safety kit",
+      "items": [
+        "Own identity per agent, scoped short-lived credentials",
+        "Human approval for anything irreversible or high-value",
+        "Run generated code in a sandbox",
+        "Keep development and production apart",
+        "Spending and rate budgets",
+        "Log every tool call",
+        "A kill switch"
+      ],
+      "footnote": "Only 34% of organizations apply the same security controls to agents as to human employees. (Okta, 2026)",
+      "narration": "Here's the agent safety kit. Give each agent its own identity and scoped, short-lived credentials. Require human approval for anything irreversible or high-value. Run code in a sandbox. Keep development and production apart. Set spending and rate budgets. Log every tool call. And have a kill switch. Only thirty-four percent of organizations apply the same security controls to agents as to human employees."
+    },
+    {
+      "id": "agent-code",
+      "chapter": 7,
+      "type": "code",
+      "title": "Approval gates live in code, not in the prompt",
+      "code": "const RISK = { read_docs: \"low\", send_email: \"high\", delete_records: \"critical\" };\n\nasync function runTool(call: ToolCall, ctx: AgentContext) {\n  const level = RISK[call.name] ?? \"critical\"; // unknown tool = deny by default\n  audit.log({ agent: ctx.agentId, tool: call.name, level });\n\n  if (level === \"critical\" && ctx.env === \"prod\") {\n    return deny(\"blocked in production\");\n  }\n  if (level !== \"low\") {\n    const approved = await approvals.request(ctx.owner, call); // human in the loop\n    if (!approved) return deny(\"not approved\");\n  }\n  return tools[call.name](call.args, ctx.scopedToken); // least privilege\n}",
+      "extraSeconds": 3,
+      "narration": "In code, the principle is simple. Classify every tool by risk, and treat unknown tools as the highest risk. Log every call. Low-risk reads run automatically. Anything that writes, deletes, pays, or sends waits for a human or a policy engine. The check lives in your infrastructure, not in the prompt, so the model can't talk its way past it."
+    },
+    {
+      "id": "agent-ladder",
+      "chapter": 7,
+      "type": "steps",
+      "title": "Autonomy is a ladder you climb with evidence",
+      "items": [
+        {
+          "title": "Suggest",
+          "body": "Human does the work"
+        },
+        {
+          "title": "Draft",
+          "body": "Human approves"
+        },
+        {
+          "title": "Act with approval",
+          "body": "Each action confirmed"
+        },
+        {
+          "title": "Act and report",
+          "body": "Reversible actions only"
+        },
+        {
+          "title": "Autonomous",
+          "body": "Low-risk, tightly bounded"
+        }
+      ],
+      "escalate": true,
+      "narration": "Think of autonomy as a ladder you climb with evidence. Start with suggestions a human acts on. Move to drafts a human approves. Then actions that each need approval. Then actions that run and report back, but only when they can be undone. Full autonomy is reserved for low-risk, tightly bounded tasks with a strong track record."
+    },
+    {
+      "id": "ch8",
+      "chapter": 8,
+      "type": "chapter",
+      "num": 8,
+      "title": "For C-levels and industry leaders",
+      "sub": "Ownership, operating model, board questions",
+      "narration": "Part eight. For C-levels and industry leaders."
+    },
+    {
+      "id": "lead-owner",
+      "chapter": 8,
+      "type": "statement",
+      "headline": "Accountability needs a name, not a committee.",
+      "sub": "Every production AI system has one business owner who answers for it.",
+      "source": "NIST AI RMF Playbook",
+      "narration": "Leaders, the first rule: accountability needs a name. The NIST playbook is clear that specific, empowered people must own AI risk, not a vague committee that meets quarterly. Every AI system in production should have a named business owner who answers for its outcomes."
+    },
+    {
+      "id": "lead-model",
+      "chapter": 8,
+      "type": "cards",
+      "title": "The AI governance operating model",
+      "columns": 4,
+      "compact": true,
+      "items": [
+        {
+          "title": "Inventory",
+          "body": "Every AI system, including AI inside vendor tools."
+        },
+        {
+          "title": "Risk tiers",
+          "body": "Low, medium, high, each with matching controls."
+        },
+        {
+          "title": "Launch gates",
+          "body": "High-risk systems reviewed before release."
+        },
+        {
+          "title": "AI council",
+          "body": "Product, engineering, legal, security, risk, HR."
+        },
+        {
+          "title": "Vendor terms",
+          "body": "Data use, audit rights, incident notice in contracts."
+        },
+        {
+          "title": "Training",
+          "body": "AI literacy for all; depth for builders."
+        },
+        {
+          "title": "Metrics",
+          "body": "Incidents, eval pass rates, time to fix, coverage.",
+          "tone": "safe"
+        }
+      ],
+      "narration": "Here's the operating model. Keep an inventory of every AI system, including AI inside vendor tools. Tier each one by risk, with matching controls. Gate high-risk launches behind review. Run a cross-functional AI council. Put data use, audit rights, and incident notice into vendor contracts. Train everyone. And track metrics: incidents, evaluation pass rates, and time to fix."
+    },
+    {
+      "id": "lead-board",
+      "chapter": 8,
+      "type": "checklist",
+      "title": "Six questions every board should ask",
+      "items": [
+        "What AI do we run, and who owns each system?",
+        "Which uses are high-risk, and what proves they work fairly?",
+        "When it fails, who finds out, and how fast?",
+        "What data leaves our walls through AI tools?",
+        "Which laws apply to us, and by when?",
+        "What would we tell a regulator, or a journalist, tomorrow?"
+      ],
+      "asQuestions": true,
+      "narration": "Six questions every board should ask. What AI do we run, and who owns each system? Which uses are high-risk, and what evidence shows they work fairly? When it fails, who finds out, and how fast? What data leaves our walls through AI tools? Which laws apply, and by when? And what would we tell a regulator, or a journalist, tomorrow?"
+    },
+    {
+      "id": "lead-value",
+      "chapter": 8,
+      "type": "split",
+      "left": {
+        "title": "Getting it wrong",
+        "tone": "risk",
+        "items": [
+          "Refunds and legal liability",
+          "Regulatory fines",
+          "Headlines and lost trust",
+          "Adoption stalls on fear"
+        ]
+      },
+      "right": {
+        "title": "Getting it right",
+        "tone": "safe",
+        "items": [
+          "Faster approval of new use cases",
+          "Smoother enterprise procurement",
+          "Staff use sanctioned tools openly",
+          "Fewer incidents to firefight"
+        ]
+      },
+      "narration": "Frame this as strategy, not cost. Getting it wrong means refunds, fines, liability, and headlines. Getting it right means faster approval of new use cases, smoother enterprise sales, because buyers increasingly ask about your AI governance, and employees using safe, sanctioned tools instead of hiding their AI use."
+    },
+    {
+      "id": "ch9",
+      "chapter": 9,
+      "type": "chapter",
+      "num": 9,
+      "title": "Building it into the organization",
+      "sub": "Maturity, shadow AI, data rules",
+      "narration": "Part nine. Building it into the organization."
+    },
+    {
+      "id": "org-maturity",
+      "chapter": 9,
+      "type": "steps",
+      "title": "Four stages of maturity",
+      "items": [
+        {
+          "title": "Ad hoc",
+          "body": "Scattered experiments, no policy"
+        },
+        {
+          "title": "Defined",
+          "body": "Policy, inventory, named owners"
+        },
+        {
+          "title": "Managed",
+          "body": "Tiers, evals, gates, monitoring"
+        },
+        {
+          "title": "Embedded",
+          "body": "Automated controls, measured, improving"
+        }
+      ],
+      "escalate": true,
+      "source": "Stanford HAI, 2026 AI Index Report",
+      "narration": "Most organizations move through four stages. Ad hoc: scattered experiments, no policy. Defined: a policy, an inventory, named owners. Managed: risk tiers, evaluations, launch gates, and monitoring. Embedded: controls built into tools and pipelines, measured and improved continuously. Stanford's data says that, across all regions, most organizations are still early."
+    },
+    {
+      "id": "org-shadow",
+      "chapter": 9,
+      "type": "statement",
+      "headline": "Bans don't stop shadow AI. Better options do.",
+      "sub": "Approved tools, a fast request path, clear data rules, and training that explains why.",
+      "narration": "On shadow AI: banning tools rarely works. People route around restrictions when approved options are slow or missing. The fix is a fast, sanctioned path: approved tools with enterprise data protection, a quick request process for new ones, clear rules on what data can go where, and training that explains why."
+    },
+    {
+      "id": "org-traffic",
+      "chapter": 9,
+      "type": "cards",
+      "title": "A traffic-light rule for data",
+      "columns": 3,
+      "items": [
+        {
+          "title": "Green: public",
+          "body": "Published or public information. Any approved tool.",
+          "tone": "safe"
+        },
+        {
+          "title": "Amber: internal",
+          "body": "Internal documents and plans. Enterprise tools with data protection in the contract only.",
+          "tone": "warn"
+        },
+        {
+          "title": "Red: restricted",
+          "body": "Customer personal data, credentials, source code, financials. Only systems explicitly cleared.",
+          "tone": "risk"
+        }
+      ],
+      "narration": "A simple traffic-light rule helps everyone. Green is public information: fine in any approved tool. Amber is internal material: enterprise tools only, with data protection in the contract. Red is customer personal data, credentials, source code, and financials: only in systems explicitly cleared for it."
+    },
+    {
+      "id": "ch10",
+      "chapter": 10,
+      "type": "chapter",
+      "num": 10,
+      "title": "For everyone who uses AI",
+      "sub": "Habits, mindset, and your rights",
+      "narration": "Part ten. For everyone who uses AI."
+    },
+    {
+      "id": "all-habits",
+      "chapter": 10,
+      "type": "checklist",
+      "title": "Seven everyday habits",
+      "items": [
+        "Verify facts at the original source",
+        "Never paste secrets or personal data into unapproved tools",
+        "Say when AI helped",
+        "Keep important decisions yours",
+        "Watch for unfair patterns",
+        "Confirm urgent voice or video requests on a second channel",
+        "Report problems when you see them"
+      ],
+      "narration": "Seven habits for everyone. Verify facts at the original source. Never paste secrets or personal data into unapproved tools. Say when AI helped with your work. Keep important decisions yours. Watch for unfair patterns. Confirm urgent voice or video requests through a second channel, because deepfakes are cheap now. And report problems when you see them."
+    },
+    {
+      "id": "all-intern",
+      "chapter": 10,
+      "type": "statement",
+      "headline": "Use AI like a brilliant intern: fast, helpful, and needs checking.",
+      "sub": "Delegate the work. Keep the judgment.",
+      "narration": "A useful mental model: treat AI like a brilliant, tireless intern. It's fast and genuinely helpful. It's also sometimes confidently wrong, and it doesn't carry the responsibility. You do. Delegate the work. Keep the judgment."
+    },
+    {
+      "id": "all-rights",
+      "chapter": 10,
+      "type": "cards",
+      "title": "Your rights when AI decides about you",
+      "columns": 2,
+      "items": [
+        {
+          "title": "To know",
+          "body": "When you're talking to an AI, under EU transparency rules."
+        },
+        {
+          "title": "To a human",
+          "body": "Under GDPR, not to face purely automated decisions with major effects, with limited exceptions."
+        },
+        {
+          "title": "To an explanation",
+          "body": "Meaningful information about the logic behind significant automated decisions."
+        },
+        {
+          "title": "To your data",
+          "body": "Access, correct, or delete it under privacy laws in many countries."
+        }
+      ],
+      "source": "EU AI Act Art. 50; GDPR Arts. 15–17, 22",
+      "narration": "And when AI makes decisions about you, you have rights in many places. To know when you're talking to an AI. Under European data law, not to be subject to purely automated decisions with major effects, and to get meaningful information about the logic involved. And to access, correct, or delete your data. Ask. In many places, organizations must respond."
+    },
+    {
+      "id": "ch11",
+      "chapter": 11,
+      "type": "chapter",
+      "num": 11,
+      "title": "Trade-offs and your 90-day plan",
+      "sub": "Making it real, starting Monday",
+      "narration": "Part eleven. Trade-offs, and your ninety-day plan."
+    },
+    {
+      "id": "plan-tradeoffs",
+      "chapter": 11,
+      "type": "statement",
+      "headline": "Fixing one thing can break another.",
+      "sub": "Safety vs. helpfulness. Privacy vs. accuracy. Make the trade-off on purpose, and write it down.",
+      "source": "Stanford HAI, 2026 AI Index Report",
+      "narration": "One honest caveat. Stanford highlights research showing that improving one responsible AI dimension, like safety, can degrade another, like accuracy. Tighter filters can make a system less helpful. Privacy techniques can cost accuracy. There's no perfect setting. The responsible move is to make these trade-offs on purpose, write them down, and revisit them."
+    },
+    {
+      "id": "plan-90",
+      "chapter": 11,
+      "type": "timeline",
+      "title": "Your first 90 days",
+      "events": [
+        {
+          "date": "Days 1–30",
+          "title": "See it",
+          "body": "Inventory all AI, name owners, publish use rules and the data traffic light, offer sanctioned tools",
+          "status": "done"
+        },
+        {
+          "date": "Days 31–60",
+          "title": "Measure it",
+          "body": "Tier by risk, build eval sets for key systems, add logging and guardrails, review vendors",
+          "status": "next"
+        },
+        {
+          "date": "Days 61–90",
+          "title": "Control it",
+          "body": "Launch gates, a red-team exercise, an incident drill, training, first metrics report",
+          "status": "next"
+        }
+      ],
+      "narration": "Here's a ninety-day plan. Days one to thirty: inventory every AI system, name owners, publish acceptable-use rules and the data traffic light, and offer sanctioned tools. Days thirty to sixty: tier by risk, build evaluation sets for your most important systems, add logging and guardrails, and review vendors. Days sixty to ninety: launch gates, a red-team exercise, an incident drill, training, and your first metrics report."
+    },
+    {
+      "id": "close-recap",
+      "chapter": 12,
+      "type": "cards",
+      "title": "What to take away",
+      "columns": 4,
+      "items": [
+        {
+          "title": "Everyone",
+          "body": "Verify. Protect data. Disclose AI help."
+        },
+        {
+          "title": "Engineers",
+          "body": "Evaluate. Guard inputs and outputs. Log. Least privilege."
+        },
+        {
+          "title": "Leaders",
+          "body": "Name owners. Inventory. Tier by risk. Measure."
+        },
+        {
+          "title": "Organizations",
+          "body": "Make the safe path the easy path. Train. Keep the loop running.",
+          "tone": "safe"
+        }
+      ],
+      "narration": "To recap. Everyone: verify, protect data, and disclose. Engineers: evaluate, add guardrails on both sides, log everything, and grant least privilege. Leaders: name owners, keep an inventory, tier by risk, and measure. Organizations: make the safe path the easy path, train people, and keep the loop running."
+    },
+    {
+      "id": "close-final",
+      "chapter": 12,
+      "type": "statement",
+      "final": true,
+      "headline": "Responsible AI isn't the brake. It's the steering.",
+      "narration": "Responsible AI isn't the brake on innovation. It's the steering. It's what lets you go faster with confidence, because you'll see problems coming, and you'll know exactly what to do when they arrive. Thanks for watching."
+    }
+  ]
+}
